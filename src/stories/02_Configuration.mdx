@@ -1,0 +1,177 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Configuration" />
+
+<div className="sb-container">
+  # Configuration
+  After all essential dependencies are installed you can import Vue components, types, helpers, constants locally, e.g.:
+  ```ts
+  <script setup lang="ts">
+    import {
+      CButton,
+      CFormField,
+      CForm,
+      CAlert,
+      CInput,
+      LocalStorageHelper
+      type ColorScheme
+    } from '@clyso/clyso-ui-kit';
+
+    LocalStorageHelper.set('auth', 'auth-token');
+
+  </script>
+
+  <template>
+    <div>
+      <CInput
+        :id="fieldId"
+        v-model:value="credentials.password"
+        :has-error="hasError"
+        size="large"
+        :placeholder="t('password')"
+        type="password"
+        show-password-on="click"
+        @input="formStatus.hasSubmitError = false"
+      />
+    </div>
+  </template>
+  ```
+  ## Styles
+  To make the styles work create `styles` folder with `styles.scss` and `utils.scss` files in it.
+  In `styles.scss` put the following exactly as is:
+  ```css
+  $fonts-path: '@clyso/clyso-ui-kit/dist/assets/fonts';
+  @import '@clyso/clyso-ui-kit/dist/styles/styles';
+
+/_ your global styles _/
+
+````
+or
+```css
+@use '@clyso/mcb-ui-library/dist/styles/styles' with (
+  $fonts-path: '@clyso/mcb-ui-library/dist/assets/fonts'
+);
+
+/_ your global styles _/
+````
+
+We need to redeclare `$fonts-path` here to make the fonts work. `styles.scss` can be used to declare global styles and it should be imported to `main.ts` file:
+
+```ts
+import '@/styles/styles.scss';
+```
+
+---
+
+`utils` should contain the utilities like functions, mixins, variables
+
+```scss
+@forward '@clyso/clyso-ui-kit/dist/styles/utils';
+
+/* your utilities */
+```
+
+`utils` can be imported to Vue component styles to use mixins, variables, functions locally:
+
+```css
+<style lang="scss" scoped>
+  @use '@/styles/utils' as utils;
+
+  .block {
+    padding: utils.unit(3);
+    margin-bottom: utils.unit(5);
+    transition: opacity utils.$transition-duration;
+    position: relative;
+
+    @include utils.mobile {
+      margin-bottom: utils.unit(3);
+    }
+
+    &__child {
+      @include utils.absolute-fit;
+    }
+  }
+</style>
+```
+
+> ⚠ **it is strongly recommended to `utils.unit(3)` for indents (margins, paddings, top, left, right, etc, but not for sizes like width or height) , where `3` is a multiplier for the unit that is equal to `4px`**
+
+## Icons
+
+To make the icons work svg sprite should be generated (`vite-plugin-svg-icons` plugin is used for that purpose). So you need to install it:
+
+```bash
+yarn add vite-plugin-svg-icons -D
+```
+
+To work with the icons:
+
+- create `assets > icons` folder inside `src` folder of your project. You can also have subfolders inside icons folder to separate base and custom coloured icons: e.g. `base` and `custom` folders. **Make sure there is no fill colors inside the svgs for base icons**
+- Inside `vite,config.ts`:
+
+```ts
+...
+plugins: {
+  ...,
+  createSvgIconsPlugin({
+    iconDirs: [
+      // Include this to make the icons inside lib components work
+      path.resolve(process.cwd(), 'node_modules/@clyso/clyso-ui-kit/dist/assets/icons'),
+      // Include your project icons
+      path.resolve(process.cwd(), 'src/assets/icons'),
+    ],
+    symbolId: 'icon-[dir]-[name]',
+  }),
+  ...
+}
+```
+
+Please refer to `vite-plugin-svg-icons` [documentation](https://github.com/vbenjs/vite-plugin-svg-icons) for more information.
+
+- It is strongly recommended to create `enum` to keep track of the icons you add to the `icons` folder and use it for name prop of `CIcon` component:
+
+```ts
+// iconName.ts
+export enum IconName {
+  // base folder
+  BASE_LOGO = 'base-logo', //  [dir]-[name]
+
+  // custom folder
+  CUSTOM_SUN = 'custom-sun', // [dir]-[name]
+}
+```
+
+```ts
+// inside Vue component
+<script setup lang="ts">
+  import { IconName } from '@/utils/types/icon';
+</script>
+
+<template>
+  <CIcon
+    class="logo-icon"
+    :name="IconName.BASE_LOGO_CLYSO"
+  />
+</template>
+```
+
+- To change the color of the icon you can use `fill` css property
+
+```css
+<style lang="scss" scoped>
+  @use '@/styles/utils' as utils;
+
+  .logo-icon {
+    fill: var(--primary-color);
+    transition: fill utils.$transition-duration;
+
+    &:hover {
+      fill: var(--primary-color-hover);
+    }
+  }
+</style>
+```
+
+- Library uses outline icons from https://ionic.io/ionicons so you can add icons from ionicons to `icons` folder when necessary
+
+</div>

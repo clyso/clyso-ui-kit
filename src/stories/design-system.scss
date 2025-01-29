@@ -1,0 +1,37 @@
+@use '../styles/utils/index' as utils;
+
+.text-caption {
+  @include utils.apply-styles(utils.$text-caption, true);
+}
+
+.text-tiny {
+  @include utils.apply-styles(utils.$text-tiny, true);
+}
+
+.text-small {
+  @include utils.apply-styles(utils.$text-small, true);
+}
+
+.text-large {
+  @include utils.apply-styles(utils.$text-large, true);
+}
+
+.text-h1 {
+  @include utils.apply-styles(utils.$text-h1, true);
+}
+
+.text-h2 {
+  @include utils.apply-styles(utils.$text-h2, true);
+}
+
+.text-h3 {
+  @include utils.apply-styles(utils.$text-h3, true);
+}
+
+.text-h4 {
+  @include utils.apply-styles(utils.$text-h4, true);
+}
+
+.text-h5 {
+  @include utils.apply-styles(utils.$text-h5, true);
+}

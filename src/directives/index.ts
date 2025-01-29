@@ -1,0 +1,1 @@
+export { vOuterClick } from './outerClick';

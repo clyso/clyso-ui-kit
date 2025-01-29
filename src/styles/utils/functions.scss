@@ -1,0 +1,7 @@
+@use 'variables' as variables;
+
+/* Calculates the spacing unit */
+/* !!! Should be used for margins, paddings and other indents only !!! */
+@function unit($multiplier: 1) {
+  @return variables.$unit-size * $multiplier;
+}

@@ -1,0 +1,12 @@
+@use '../utils/variables' as variables;
+
+// opacity
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: opacity variables.$transition-duration;
+}
+
+.opacity-enter,
+.opacity-leave-to {
+  opacity: 0;
+}

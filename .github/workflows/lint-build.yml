@@ -1,0 +1,38 @@
+name: Lint and Build
+
+on:
+  push:
+    branches:
+      - '**'  # Triggers on every push to any branch
+
+jobs:
+  lint-build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20]  # Node.js version to use
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Set up Yarn 4.6.0
+        run: |
+          corepack enable
+          corepack prepare yarn@4.6.0 --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile  # Ensures no changes to yarn.lock
+
+      - name: Run lint
+        run: yarn lint
+
+      - name: Build project
+        run: yarn build

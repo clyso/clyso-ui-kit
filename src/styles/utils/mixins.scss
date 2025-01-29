@@ -1,0 +1,108 @@
+@use 'variables' as variables;
+@use 'functions' as functions;
+
+/* Apply styles map */
+@mixin apply-styles($styles: (), $isImportant: false) {
+  @if $isImportant {
+    @each $prop, $value in $styles {
+      #{$prop}: $value !important;
+    }
+  } @else {
+    @each $prop, $value in $styles {
+      #{$prop}: $value;
+    }
+  }
+}
+
+@mixin break-word {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin button-no-styles {
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  border-style: none;
+  color: inherit;
+}
+
+@mixin absolute-y-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin absolute-x-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin absolute-xy-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-fit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Media queries */
+@mixin mobile {
+  @media screen and (max-width: variables.$viewport-tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: variables.$viewport-tablet) and (max-width: variables.$viewport-desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media screen and (max-width: variables.$viewport-desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: variables.$viewport-desktop) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop-only {
+  @media screen and (min-width: variables.$viewport-tablet) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: variables.$container-max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 functions.unit(10);
+
+  @include touch {
+    padding: 0 functions.unit(6);
+  }
+
+  @include mobile {
+    padding: 0 functions.unit(3);
+  }
+}

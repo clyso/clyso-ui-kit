@@ -1,0 +1,102 @@
+/* Viewport sizes */
+$viewport-tablet: 640px;
+$viewport-desktop: 1024px;
+
+/* Spacing unit */
+$unit-size: 4px;
+
+/* Fonts */
+$font-primary: 'Poppins';
+$font-highlight: 'NeueMachina';
+$font-weight-regular: 300;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$base-font-size: 14px;
+$line-height: 1.6;
+$title-line-height: 1.3;
+
+$border-radius: 4px;
+$border-radius-small: 2px;
+
+$container-max-width: 1536px;
+
+/* Text styles*/
+$text: (
+  font-size: $base-font-size,
+  font-weight: $font-weight-regular,
+  line-height: $line-height,
+  font-family: $font-primary,
+);
+
+$text-tiny: (
+  font-size: 0.7rem,
+  font-weight: $font-weight-regular,
+  line-height: $line-height,
+  font-family: $font-primary,
+);
+
+$text-small: (
+  font-size: 0.857rem,
+  font-weight: $font-weight-regular,
+  line-height: $line-height,
+  font-family: $font-primary,
+);
+
+$text-large: (
+  font-size: 1.071rem,
+  font-weight: $font-weight-regular,
+  line-height: $line-height,
+  font-family: $font-primary,
+);
+
+$text-caption: (
+  font-size: 0.857rem,
+  line-height: 1.6,
+  font-weight: $font-weight-semibold,
+  font-family: $font-primary,
+);
+
+$text-h1: (
+  font-size: 1.802rem,
+  line-height: $title-line-height,
+  font-weight: $font-weight-semibold,
+  font-family: $font-highlight,
+);
+
+$text-h2: (
+  font-size: 1.602rem,
+  line-height: $title-line-height,
+  font-weight: $font-weight-semibold,
+  font-family: $font-highlight,
+);
+
+$text-h3: (
+  font-size: 1.424rem,
+  line-height: $title-line-height,
+  font-weight: $font-weight-semibold,
+  font-family: $font-highlight,
+);
+
+$text-h4: (
+  font-size: 1.266rem,
+  line-height: $title-line-height,
+  font-weight: $font-weight-semibold,
+  font-family: $font-highlight,
+);
+
+$text-h5: (
+  font-size: 1.125rem,
+  line-height: $title-line-height,
+  font-weight: $font-weight-semibold,
+  font-family: $font-highlight,
+);
+
+/* Transition */
+$transition-duration: 0.2s;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;

@@ -1,0 +1,86 @@
+@use '../utils/index' as utils;
+
+html {
+  font-size: utils.$base-font-size;
+}
+
+body {
+  font-family: utils.$font-primary, sans-serif;
+  color: var(--text-color-base);
+  background-color: var(--body-color);
+  @include utils.apply-styles(utils.$text);
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  @include utils.container;
+}
+
+.text-caption {
+  @include utils.apply-styles(utils.$text-caption);
+}
+
+.text-tiny {
+  @include utils.apply-styles(utils.$text-tiny);
+}
+
+.text-small {
+  @include utils.apply-styles(utils.$text-small);
+}
+
+.text-large {
+  @include utils.apply-styles(utils.$text-large);
+}
+
+// Titles
+h1 {
+  @include utils.apply-styles(utils.$text-h1);
+}
+
+h2 {
+  @include utils.apply-styles(utils.$text-h2);
+}
+
+h3 {
+  @include utils.apply-styles(utils.$text-h3);
+}
+
+h4 {
+  @include utils.apply-styles(utils.$text-h4);
+}
+
+h5 {
+  @include utils.apply-styles(utils.$text-h5);
+}
+
+.text-h1 {
+  @include utils.apply-styles(utils.$text-h1);
+}
+
+.text-h2 {
+  @include utils.apply-styles(utils.$text-h2);
+}
+
+.text-h3 {
+  @include utils.apply-styles(utils.$text-h3);
+}
+
+.text-h4 {
+  @include utils.apply-styles(utils.$text-h4);
+}
+
+.text-h5 {
+  @include utils.apply-styles(utils.$text-h5);
+}

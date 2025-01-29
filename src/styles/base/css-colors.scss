@@ -1,0 +1,119 @@
+:root {
+  --clyso-color: #d7ff84ff;
+  --base-color: #f8f9fbff;
+  --primary-color: #808f12ff;
+  --primary-color-rgb: 128, 143, 18;
+  --primary-color-hover: #c0cb72ff;
+  --primary-color-pressed: #95a403ff;
+  --primary-color-suppl: #eaf581ff;
+  --info-color: #0799a6ff;
+  --info-color-hover: #35a8b2ff;
+  --info-color-pressed: #078ea6ff;
+  --info-color-suppl: #017295ff;
+  --success-color: #179f57ff;
+  --success-color-hover: #35ac69ff;
+  --success-color-pressed: #0b7b43ff;
+  --success-color-suppl: #36ad6aff;
+  --warning-color: #f0a01fff;
+  --warning-color-hover: #fdb140ff;
+  --warning-color-pressed: #ca7c10ff;
+  --warning-color-suppl: #fdb03fff;
+  --error-color: #d02f4fff;
+  --error-color-hover: #de556bff;
+  --error-color-pressed: #ae1f40ff;
+  --error-color-suppl: #df556bff;
+  --text-color-base: #070b18ff;
+  --text-color-1: #070b18ff;
+  --text-color-2: #333639ff;
+  --text-color-3: #767c82ff;
+  --text-color-disabled: #c2c2c2ff;
+  --body-color: #f8f9fbff;
+  --table-color: #f9f9f9ff;
+  --menu-color: #efefef;
+  --menu-shadow: #070b1820;
+  --menu-alt-color: #e7e7e7;
+  --side-menu-font-color: #37352f;
+  --side-menu-option-hover-color: #eae9e9;
+  --side-menu-option-active-color: #f3f3f5ff;
+  --side-menu-option-matched-color: #e7ebefff;
+  --card-color: #ffffff;
+  --popover-color: #ffffff;
+  --card-border-color: #efeff5ff;
+  --skeleton-color: rgba(0, 0, 0, 0.12);
+  --skeleton-alt-color: rgba(255, 255, 255, 0.4);
+  --icon-color: rgba(194, 194, 194, 1);
+  --notification-color: #ffffff;
+  --notification-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    -4px 0 8px rgba(0, 0, 0, 0.1);
+  --border-color: rgba(239, 239, 245, 1);
+  --filters-card-color: rgba(250, 250, 252, 1);
+  --button-color-2: #2e33380d;
+  --button-color-2-hover: #2e333817;
+  --button-color-2-pressed: #2e333821;
+  --upload-dragger-color: #fafafcff;
+  --upload-hover-color: #f3f3f5ff;
+  --upload-active-color: #efeff1ff;
+}
+
+@mixin dark-colors {
+  --clyso-color: #d7ff84ff;
+  --primary-color: #d7ff84ff;
+  --primary-color-rgb: 215, 255, 132;
+  --primary-color-hover: #e0fca7ff;
+  --primary-color-pressed: #b9fa35ff;
+  --primary-color-suppl: #93b747ff;
+  --base-color: #070b18ff;
+  --info-color: #4fc0daff;
+  --info-color-hover: #85dcefff;
+  --info-color-pressed: #3dcbebff;
+  --info-color-suppl: #1c7f95ff;
+  --success-color: #62e2b7ff;
+  --success-color-hover: #7fe8c5ff;
+  --success-color-pressed: #5ad0a8ff;
+  --success-color-suppl: #29937cff;
+  --warning-color: #f2c97cff;
+  --warning-color-hover: #f6d699ff;
+  --warning-color-pressed: #e7c25fff;
+  --warning-color-suppl: #f08a00ff;
+  --error-color: #e87f7fff;
+  --error-color-hover: #e88989ff;
+  --error-color-pressed: #e57272ff;
+  --error-color-suppl: #d13952ff;
+  --text-color-base: #f0f3f9ff;
+  --text-color-1: #ffffffee;
+  --text-color-2: #ffffffd1;
+  --text-color-3: #ffffff85;
+  --text-color-disabled: #ffffff61;
+  --body-color: #101014ff;
+  --table-color: #18181cff;
+  --menu-color: #1a2323ff;
+  --menu-shadow: #273434ff;
+  --menu-alt-color: #222f2fff;
+  --side-menu-font-color: #d0d0d0ff;
+  --side-menu-option-hover-color: rgba(255, 255, 255, 0.09);
+  --side-menu-option-active-color: rgba(31, 37, 17, 0.05);
+  --side-menu-option-matched-color: #202d2dff;
+  --card-color: #18181cff;
+  --popover-color: #48484eff;
+  --card-border-color: rgba(240, 243, 249, 0.09);
+  --skeleton-color: rgba(255, 255, 255, 0.2);
+  --skeleton-alt-color: rgba(255, 255, 255, 0.4);
+  --icon-color: rgba(112, 112, 112);
+  --notification-color: #48484eff;
+  --notification-shadow: 0 4px 8px rgba(9, 8, 8, 0.5),
+    -4px 0 8px rgba(37, 35, 35, 0.5);
+  --border-color: rgba(45, 45, 48, 1);
+  --filters-card-color: rgba(38, 38, 42, 1);
+  --button-color-2: #ffffff14;
+  --button-color-2-hover: #ffffff1f;
+  --button-color-2-pressed: #ffffff14;
+  --upload-dragger-color: #ffffff0f;
+  --upload-hover-color: #ffffff17;
+  --upload-active-color: #ffffff1f;
+}
+
+body {
+  &.color-scheme-dark {
+    @include dark-colors;
+  }
+}

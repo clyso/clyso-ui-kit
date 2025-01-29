@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 650 400"
+     shape-rendering="geometricPrecision"
+     text-rendering="geometricPrecision">
+    <g transform="matrix(1.102216 0 0 1.102216-3.460368-29.812036)">
+        <g>
+            <rect width="36" height="217" rx="0" ry="0" transform="translate(32 123)"/>
+            <rect width="36" height="263" rx="0" ry="0" transform="translate(131 77)"/>
+            <rect width="36" height="130" rx="0" ry="0" transform="translate(230 210)"/>
+            <rect width="36" height="146" rx="0" ry="0" transform="translate(330 194)"/>
+            <rect width="36" height="176" rx="0" ry="0" transform="translate(429 164)"/>
+            <rect width="36" height="155" rx="0" ry="0" transform="translate(528 185)"/>
+        </g>
+    </g>
+</svg>

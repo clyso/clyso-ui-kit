@@ -1,6 +1,6 @@
 {
   "name": "@clyso/clyso-ui-kit",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "Apache-2.0",
   "packageManager": "yarn@4.6.0",
   "description": "Clyso Vue 3 Component Library based on Naive UI. Uses TypeScript.",
@@ -25,7 +25,7 @@
     "lint:eslint": "eslint --no-fix --max-warnings 0",
     "lint:oxlint": "oxlint . -D correctness",
     "lint:stylelint": "stylelint \"src/**/*.{vue,css,scss}\"",
-    "lint:prettier": "prettier --check src/ && prettier --check .storybook/" ,
+    "lint:prettier": "prettier --check src/ && prettier --check .storybook/",
     "fix:eslint": "eslint . --fix",
     "fix:oxlint": "oxlint . --fix -D correctness",
     "fix:stylelint": "stylelint \"src/**/*.{vue,css,scss}\" --fix",

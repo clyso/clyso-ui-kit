@@ -5,7 +5,7 @@ export default create({
   fontBase: 'Poppins',
   brandTitle: 'Clyso',
   brandUrl: 'https://clyso.com',
-  brandImage: '/assets/icons/logo-clyso-dark.svg',
+  brandImage: './assets/icons/logo-clyso-dark.svg',
   brandTarget: '_blank',
   appContentBg: '#101014',
   appPreviewBg: '#101014',

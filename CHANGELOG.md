@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/clyso/clyso-ui-kit/compare/v1.0.0...v1.0.1) (2025-02-17)
+
+
+### Bug Fixes
+
+* build before publishing to npm ([0dda08d](https://github.com/clyso/clyso-ui-kit/commit/0dda08dcdd7713bb6df7b4bc2c8aa97f3df87d43))
+
 # 1.0.0 (2025-02-13)
 
 

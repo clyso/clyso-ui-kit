@@ -1,6 +1,6 @@
 {
   "name": "@clyso/clyso-ui-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "packageManager": "yarn@4.6.0",
   "description": "Clyso Vue 3 Component Library based on Naive UI. Uses TypeScript.",
